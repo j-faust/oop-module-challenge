@@ -1,8 +1,10 @@
+// loading required files
 const inquirer = require('inquirer');
 const fs = require('fs');
 const genHtmlFile = require('./genHtml.js');
 const Manager = require('../lib/Manager.js');
 
+// Manager question object array
 const mgrQuestions = [
     {
         type: 'input',
@@ -29,7 +31,7 @@ const mgrQuestions = [
 
 
 
-
+// function to prompt user for manager questions
 function addMgr() {
     return inquirer
     .prompt(mgrQuestions)
@@ -39,4 +41,5 @@ function addMgr() {
 })
     }
 
+// exporting file
 module.exports = addMgr; 

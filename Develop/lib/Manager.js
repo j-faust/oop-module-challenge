@@ -1,5 +1,7 @@
+// requiring Employee class
 const Employee = require('./Employee');
 
+// creating manager subclass
 class Manager extends Employee {
     constructor(name, id, email, officeNumber) {
         super(name, id, email);
@@ -10,4 +12,5 @@ class Manager extends Employee {
     }
 };
 
+// exporting class
 module.exports = Manager;

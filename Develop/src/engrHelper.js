@@ -1,8 +1,10 @@
+// loading required files
 const inquirer = require('inquirer');
 const fs = require('fs');
 const genHtmlFile = require('./genHtml.js');
 const Engineer = require('../lib/Engineer.js');
 
+// Engineer question object array
 const engrQuestions = [
     {
         type: 'input',
@@ -29,7 +31,7 @@ const engrQuestions = [
 
 
 
-
+// function to prompt user with questions for engineer
 async function addEngr() {
     return await inquirer
     .prompt(engrQuestions)
@@ -39,5 +41,5 @@ async function addEngr() {
 })
     };
 
-
+// exporting file
 module.exports = addEngr; 

@@ -1,3 +1,4 @@
+// class for Employee
 class Employee {
     constructor(name, id, email) {
         this.name = name;
@@ -20,5 +21,5 @@ class Employee {
 
 };
 
-
+// exporting class
 module.exports = Employee;

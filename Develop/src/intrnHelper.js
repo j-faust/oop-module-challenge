@@ -1,8 +1,10 @@
+// loading required files
 const inquirer = require('inquirer');
 const fs = require('fs');
 const genHtmlFile = require('./genHtml.js');
 const Intern = require('../lib/Intern.js');
 
+// intern question object array
 const internQuestions = [
     {
         type: 'input',
@@ -17,18 +19,18 @@ const internQuestions = [
     {
         type: 'input',
         name: 'email',
-        message: "What is the Engineer's email?"
+        message: "What is the Intern's email?"
     },
     {
         type: 'input',
         name: 'school',
-        message: "What is the Engineer's school?"
+        message: "What is the Intern's school?"
     
     }
 ]
 
 
-
+// function to prompt questions regarding intern
 
 async function addIntern() {
     return await inquirer
@@ -39,4 +41,5 @@ async function addIntern() {
 })
     }
 
+// exporting file
 module.exports = addIntern; 

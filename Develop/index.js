@@ -1,5 +1,4 @@
-// pulling in helper files and classes for users
-
+// requiring helper files and classes
 const Employee = require('./lib/Employee.js');
 const Engineer = require('./lib/Engineer.js');
 const Intern = require('./lib/Intern.js');
@@ -34,8 +33,9 @@ while (done == false) {
         })
         .then(async (data) => {
 
-    // switch statement to go through and run helper functions for either engineer or intern.  if user selects build team then it will generate HTML
-    if(typeof data.type === 'string'){
+    // if statement that will begin switch statement as long as input data type is a string
+    if(typeof data.type === 'string') {
+    // switch statement to go through and run helper functions for either engineer or intern.  if user selects build team then it will generate HTML    
     switch(data.type) {
         case 'Engineer':
             await addEngr().then((eng) => {
@@ -48,11 +48,16 @@ while (done == false) {
             });
             break;
         case 'Build Team!':
-            genHtml(employeeArr);   
+            // setting genHtml function to variable
+            var htmlStr = genHtml(employeeArr);   
+            // creating HTML file to dist folder
+            fs.writeFile("dist/index.html", htmlStr, (err) => 
+            err ? console.log(err) : console.log('Thank you, your index.html file has been generated!')
+            );
             done = true; 
             break;
         default:
-                console.log( "Invalid Response! Please Enter Your Team Info!");
+                console.log( "Invalid Response! Please Enter Team Info!");
                 break;  
         }
     };
@@ -64,16 +69,7 @@ while (done == false) {
         if(err) {
             console.log(err);
         }
-    })
+    });
     }
 });
 
-// writing data to create the HTML file
-function writeToFile() {
-
-}
-
-// function to intialize app
-function init() {
-
-}
