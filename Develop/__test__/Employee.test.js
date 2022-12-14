@@ -1,3 +1,4 @@
+// requiring the Employee class
 const Employee = require('../lib/Employee.js')
 
 describe("Employee", () => { 

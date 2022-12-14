@@ -32,7 +32,7 @@ function egrCard(egr) {
         <p class="card-text">Engineer</p>
         <p class="card-text">Employee ID: ${egr.id}</p>
         <p class="card-text">Email: <a href="mailto:${egr.email}">${egr.email}</a></p>
-        <p class="card-text">GitHub: <a href="https://github.com/${egr.github}">https://github.com/${egr.github}</a></p>
+        <p class="card-text">GitHub: <a href="https://github.com/${egr.github}" target="_blank">https://github.com/${egr.github}</a></p>
       </div>
     </div>
   </div>`
